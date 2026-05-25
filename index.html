@@ -99,9 +99,9 @@
             position: absolute;
             bottom: 14px; left: 14px;
             display: grid;
-            grid-template-columns: repeat(3, 52px);
-            grid-template-rows: repeat(3, 52px);
-            gap: 4px;
+            grid-template-columns: repeat(3, 36px);
+            grid-template-rows: repeat(3, 36px);
+            gap: 3px;
             pointer-events: all;
         }
 
@@ -117,23 +117,21 @@
             display: flex; gap: 14px; align-items: center;
         }
 
-        /* --- SYSTEM BUTTONS (haut droite dans canvas) --- */
+        /* --- SYSTEM BUTTONS (dans le hud-top) --- */
         #sys-btns {
-            position: absolute;
-            top: 8px; right: 8px;
-            display: flex; gap: 8px;
-            pointer-events: all;
+            display: flex; gap: 6px;
+            align-items: center;
         }
 
         /* ===== BUTTON STYLES ===== */
         .btn-ov {
             background: rgba(80,80,80,0.28);
             border: 2px solid rgba(255,255,255,0.22);
-            border-radius: 10px;
+            border-radius: 8px;
             color: rgba(255,255,255,0.75);
-            font-weight: bold; font-size: 20px;
+            font-weight: bold; font-size: 14px;
             display: flex; justify-content: center; align-items: center;
-            width: 52px; height: 52px;
+            width: 36px; height: 36px;
             font-family: monospace;
             cursor: pointer;
             backdrop-filter: blur(1px);
@@ -146,9 +144,9 @@
         }
 
         .btn-action-ov {
-            width: 60px; height: 60px;
+            width: 44px; height: 44px;
             border-radius: 50%;
-            font-size: 18px;
+            font-size: 15px;
             font-family: sans-serif;
         }
 
@@ -275,6 +273,11 @@
             <div id="room-title">Defi4-Patroid</div>
             <div id="room-coords">ZONE: [X: 0, Y: 0]</div>
         </div>
+        <div id="sys-btns">
+            <button class="btn-sys-ov" id="btn-start-ov">START</button>
+            <button class="btn-sys-ov" id="btn-pause-ov">PAUSE</button>
+            <button class="btn-sys-ov" id="btn-hs-ov" style="display:none;">🏆</button>
+        </div>
         <div class="minimap-container" id="minimap"></div>
     </div>
 
@@ -283,13 +286,6 @@
         <canvas id="gameCanvas"></canvas>
 
         <div id="controls-overlay">
-
-            <!-- SYSTEM BUTTONS top-right -->
-            <div id="sys-btns">
-                <button class="btn-sys-ov" id="btn-start-ov">START</button>
-                <button class="btn-sys-ov" id="btn-pause-ov">PAUSE</button>
-                <button class="btn-sys-ov" id="btn-hs-ov" style="display:none;">🏆</button>
-            </div>
 
             <!-- D-PAD bas gauche -->
             <div id="dpad">
